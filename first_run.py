@@ -164,6 +164,8 @@ def line_to_charset(line_dict, unclassified_label,jstart=91):
 
 
 def prepare_input_output(batch_size=32):
+  file_path  = '/content/drive/My Drive/PartA_Gujarati/Train/Audio'
+  file_folder = os.listdir(file_path)
   count=0
   x=[]
   y=[]
