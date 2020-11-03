@@ -195,15 +195,6 @@ def prepare_input_output(batch_size=32):
       # count=0
       # return (x,y)
 
-prepare_output()
-alpha = prepare_input_output(32)
-alpha = list(alpha)
-(x_train,y_train) = alpha[0]
-x_train = np.array(x_train)
-# y_test = alpha[1]
-print(type(x_train))
-print(type(y_train))
-
 def network(length_char_dict=65):
   length_char_dict=65
   input_layer = Input(name = 'input',shape=(None,80))
@@ -239,3 +230,16 @@ def train_model(num_epochs=4):
   plt.xlabel('epoch')
   plt.legend(['train', 'validation'], loc='upper left')
   plt.show()
+
+if __name__=='__main__':
+           prepare_output()
+           alpha = prepare_input_output(32)
+           alpha = list(alpha)
+           (x_train,y_train) = alpha[0]
+           x_train = np.array(x_train)
+           # y_test = alpha[1]
+#            print(type(x_train))
+#            print(type(y_train))
+           network(len(char_dict))
+           train_model(4000)
+           
